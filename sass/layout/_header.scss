@@ -23,7 +23,13 @@
   }
 
   &__logo {
-    height: 5rem;
+    height: 3.5rem;
+    transition: all 0.4s;
+  }
+
+  &__logo:hover {
+    transform: translateY(-0.8rem) rotateY(20deg);
+    cursor: pointer;
   }
 
   &__text-box {
