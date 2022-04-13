@@ -14,72 +14,9 @@ html {
 
 body {
   padding: 3rem;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* Nghĩa là line height gấp 1.7 lần line height mặc định */
-  line-height: 1.7;
-  color: #fff;
   text-rendering: optimizeSpeed;
   image-rendering: optimizeSpeed;
   box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  position: relative;
-  /* Màu gradient đổ dần từ left-top xuống right-bottom */
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  /* Nghĩa là khi ảnh bị kéo thu nhỏ thì top giữ nguyên ko đổi
-        nhưng phần bottom và center sẽ bị crop theo */
-  background-position: top;
-  /* Cắt hình theo tọa độ x y, lấy tọa độ (0,0) nằm ở góc trái màn hình */
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-  .header__logo-box {
-    position: absolute;
-    top: 3rem;
-    left: 3rem; }
-  .header__logo {
-    height: 5rem; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center; }
-
-.heading-primary {
-  margin-bottom: 3rem;
-  color: #fff;
-  text-transform: uppercase; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    /* ease-in: vào chậm ra nhanh, ease-out thì ngược lại */
-    animation-timing-function: ease-in;
-    -webkit-animation-name: moveInLeft;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-timing-function: ease-in;
-    /*
-          // Số lần animation lặp lại 
-          animation-iteration-count: 2;
-          // Sau 2s thì animation mới thực hiện
-          animation-delay: 2s;
-        */
-    /* Làm tránh những animation lỗi tự phát sinh ko mong muốn hiển thị đến người dùng */
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden; }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.4rem;
-    -webkit-animation: moveInRight 1s ease-in;
-    animation: moveInRight 1s ease-in; }
 
 @-webkit-keyframes moveInLeft {
   0% {
@@ -121,6 +58,14 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
+@-webkit-keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(8rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
 @keyframes moveInBottom {
   0% {
     opacity: 0;
@@ -128,6 +73,135 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0); } }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* Nghĩa là line height gấp 1.7 lần line height mặc định */
+  line-height: 1.7;
+  color: #777; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase; }
+  .heading-primary--main {
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem; }
+  .heading-primary--sub {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.4rem; }
+
+.heading-secondary {
+  display: inline-block;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s; }
+  .heading-secondary:hover {
+    transform: scale(1.1);
+    text-shadow: 0.2rem 2rem 1rem rgba(0, 0, 0, 0.2); }
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem;
+  margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center !important; }
+
+.u-mb-s {
+  margin-bottom: 2rem !important; }
+
+.u-mb-m {
+  margin-bottom: 4rem !important; }
+
+.u-mb-l {
+  margin-bottom: 8rem !important; }
+
+.heading-primary {
+  margin-bottom: 3rem; }
+  .heading-primary--main {
+    display: block;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /* ease-in: vào chậm ra nhanh, ease-out thì ngược lại */
+    animation-timing-function: ease-in;
+    -webkit-animation-name: moveInLeft;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in;
+    /*
+            // Số lần animation lặp lại 
+            animation-iteration-count: 2;
+            // Sau 2s thì animation mới thực hiện
+            animation-delay: 2s;
+          */
+    /* Làm tránh những animation lỗi tự phát sinh ko mong muốn hiển thị đến người dùng */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  .heading-primary--sub {
+    display: block;
+    -webkit-animation: moveInRight 1s ease-in;
+    animation: moveInRight 1s ease-in; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }
+
+.header {
+  height: 95vh;
+  position: relative;
+  /* Màu gradient đổ dần từ left-top xuống right-bottom */
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  /* Nghĩa là khi ảnh bị kéo thu nhỏ thì top giữ nguyên ko đổi
+            nhưng phần bottom và center sẽ bị crop theo */
+  background-position: top;
+  /* Cắt hình theo tọa độ x y, lấy tọa độ (0,0) nằm ở góc trái màn hình */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  .header__logo-box {
+    position: absolute;
+    top: 3rem;
+    left: 3rem; }
+  .header__logo {
+    height: 5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    display: block;
+    content: "";
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
 
 .btn {
   /* Làm hiệu ứng lên xuống khi hover và active trên btn */
@@ -167,7 +241,58 @@ body {
     .btn--white::after {
       background-color: #fff; }
   .btn--animated {
+    -webkit-animation: moveInBottom 0.8s ease-out 0.7s;
     animation: moveInBottom 0.8s ease-out 0.7s;
     /* Hiểu là tất cả các thuộc tính của animation vẫn được apply trong thời gian delay */
+    -webkit-animation-fill-mode: backwards;
     animation-fill-mode: backwards;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
+
+.btn-text:link, .btn-text:visited {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.4rem 0.4rem;
+  border-bottom: 1.5px solid #55c57a;
+  color: #55c57a;
+  transition: all 0.2s; }
+
+.btn-text:hover {
+  background-color: #55c57a;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.btn-text:active {
+  background-color: #55c57a;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.composition {
+  position: relative; }
+  .composition__photo {
+    position: absolute;
+    width: 55%;
+    box-shadow: 0 2.5rem 2rem rgba(0, 0, 0, 0.4);
+    transition: all 0.2s; }
+    .composition__photo--1 {
+      top: -4rem;
+      left: 0; }
+    .composition__photo--2 {
+      top: 0;
+      left: 20rem; }
+    .composition__photo--3 {
+      top: 8rem;
+      left: 10rem; }
+    .composition__photo:hover {
+      z-index: 2;
+      transform: scale(1.2) translateY(-3px);
+      padding: 1rem;
+      border: 1rem solid #55c57a;
+      border-radius: 2rem;
+      cursor: pointer; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }

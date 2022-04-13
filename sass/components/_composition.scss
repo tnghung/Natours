@@ -1,0 +1,36 @@
+.composition {
+  position: relative;
+  &__photo {
+    position: absolute;
+    width: 55%;
+    box-shadow: 0 2.5rem 2rem rgba($color-black, 0.4);
+    transition: all 0.2s;
+
+    &--1 {
+      top: -4rem;
+      left: 0;
+    }
+    &--2 {
+      top: 0;
+      left: 20rem;
+    }
+    &--3 {
+      top: 8rem;
+      left: 10rem;
+    }
+
+    &:hover {
+      z-index: 2;
+      transform: scale(1.2) translateY(-3px);
+      padding: 1rem;
+      border: 1rem solid $color-primary;
+      border-radius: 2rem;
+      cursor: pointer;
+    }
+  }
+
+  //   Khi composition được hover và các composition__photo ko đc hover thì hoạt đọng cái này
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
+  }
+}

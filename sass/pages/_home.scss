@@ -1,0 +1,35 @@
+.heading-primary {
+  margin-bottom: 3rem;
+
+  &--main {
+    display: block;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /* ease-in: vào chậm ra nhanh, ease-out thì ngược lại */
+    animation-timing-function: ease-in;
+    -webkit-animation-name: moveInLeft;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in;
+    /*
+            // Số lần animation lặp lại 
+            animation-iteration-count: 2;
+            // Sau 2s thì animation mới thực hiện
+            animation-delay: 2s;
+          */
+    /* Làm tránh những animation lỗi tự phát sinh ko mong muốn hiển thị đến người dùng */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  &--sub {
+    display: block;
+    -webkit-animation: moveInRight 1s ease-in;
+    animation: moveInRight 1s ease-in;
+  }
+}
+
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh;
+}
