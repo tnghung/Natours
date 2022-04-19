@@ -28,8 +28,8 @@
   }
 
   &__logo:hover {
-    transform: translateY(-0.8rem) rotateY(20deg);
     cursor: pointer;
+    transform: translateY(-0.8rem) rotateY(20deg);
   }
 
   &__text-box {
