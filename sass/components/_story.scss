@@ -1,0 +1,61 @@
+.story {
+  width: 80%;
+  margin: 0 auto;
+  padding: 4rem;
+  background-color: rgba($color-white, 0.6);
+  font-size: $default-font-size;
+  box-shadow: 1.2rem 2rem 6rem rgba($color: $color-black, $alpha: 0.1);
+  transform: skewX(-12deg);
+
+  & > * {
+    transform: skewX(12deg);
+  }
+
+  &__avatar {
+    position: relative;
+    float: left;
+    height: 15rem;
+    width: 15rem;
+    margin-right: 3rem;
+    // Defines a shape around which inline content wraps, this block must have float element
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+  }
+
+  &__img {
+    height: 100%;
+    transition: all 0.5s;
+    transform: translateX(-3rem) scale(1.2);
+  }
+  &__img-c {
+    transform: translateX(0rem) scale(1.2);
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-white;
+    opacity: 0;
+    transition: all 0.5s;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    filter: blur(3px) brightness(85%);
+    transform: translateX(-3rem) scale(1);
+  }
+
+  &:hover &__img-c {
+    filter: blur(3px) brightness(85%);
+    transform: translateX(0rem) scale(1);
+  }
+}

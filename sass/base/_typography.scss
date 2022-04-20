@@ -63,6 +63,7 @@ body {
   transition: all 0.2s;
 
   &:hover {
+    cursor: default;
     transform: scale(1.1);
     text-shadow: 0.2rem 2rem 1rem rgba($color-black, 0.2);
   }
@@ -70,8 +71,9 @@ body {
 
 .heading-tertiary {
   font-size: $default-font-size;
-  font-weight: 700;
+  font-weight: 900;
   text-transform: uppercase;
+  word-spacing: 0.2rem;
 }
 
 .paragraph {
