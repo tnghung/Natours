@@ -1,4 +1,6 @@
 .btn {
+  // <button> không có pseudo class, không có pseudo elemnt như <a>
+  &,
   &:link,
   &:visited {
     position: relative;
@@ -9,6 +11,8 @@
     font-size: $default-font-size;
     border-radius: 10rem;
     transition: all 0.2s;
+    border: none;
+    cursor: pointer;
   }
 
   &::after {
@@ -31,10 +35,23 @@
     &::after {
       background-color: $color-white;
     }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1.2rem 2rem rgba($color: $color-black, $alpha: 0.15);
+    }
   }
   &--green {
     background-color: $color-primary;
     color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: 0 1.2rem 2rem rgba($color: $color-black, $alpha: 0.15);
+    }
   }
 
   /* Làm hiệu ứng lên xuống khi hover và active trên btn */
@@ -91,5 +108,9 @@
 
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &:focus {
+    outline-color: $color-primary;
   }
 }

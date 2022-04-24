@@ -32,3 +32,30 @@
   position: relative;
   padding: 10rem;
 }
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+
+  .book {
+    // Solid color-gradient -> dùng 2 màu chạy trên một gradient
+    // theo tỉ lệ phần trăm thì sẽ có một đường màu chặn giữa 2 màu đó
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 0.8) 50%,
+        transparent 50%
+      ),
+      url(../../img/nat-10.jpg);
+    background-size: cover;
+    box-shadow: 0 1.2rem 3rem rgba($color: $color-black, $alpha: 0.4);
+
+    &__form {
+      padding: 6rem;
+      width: 50%;
+    }
+  }
+}

@@ -1,0 +1,105 @@
+.form {
+  &__group {
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 3.5rem;
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 90%;
+    padding: 1.2rem 1.6rem;
+    font-family: inherit;
+    font-size: 1.8rem;
+    color: $color-black;
+    border-radius: 3px;
+    border: none;
+    border-bottom: 4px solid transparent;
+    transition: all 0.3s;
+
+    &::placeholder {
+      font-size: 1.6rem;
+      color: $color-grey-dark-2;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1.2rem 2rem rgba($color: $color-black, $alpha: 0.15);
+      border-bottom: 4px solid $color-primary;
+    }
+
+    // Kiểm tra giá trị người dùng nhập vào input, nếu không hợp lệ thì border sẽ màu đỏ
+    &:focus:invalid {
+      border-bottom: 4px solid $color-error;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+
+    transition: all 0.3s;
+    position: absolute;
+    top: -2.5rem;
+    left: 1.6rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  // selector + dành cho sibling tag nếu thẻ label nằm liền sau thẻ input
+  //  selector ~ dành cho sibling tag nếu thẻ label nằm sau nhưng có một vài thẻ đồng cấp khác ngăn cách với thẻ input
+  &__input:placeholder-shown + &__label {
+    // Khi có placeholder thì thằng label sẽ biến mất và nằm bến dưới
+    // Khi không có placeholder thì label sẽ xuất hiện lại và trồi lên trên
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4px);
+  }
+
+  &__radio-group {
+    display: inline-block;
+    width: 49%;
+  }
+
+  &__radio-label {
+    position: relative;
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding-left: 4rem;
+    cursor: pointer;
+  }
+
+  &__radio-btn {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: -0.5rem;
+    left: 0rem;
+    border-radius: 50%;
+    border: 5px solid $color-primary;
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1.3rem;
+      height: 1.3rem;
+      background-color: $color-primary;
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+  }
+
+  &__input-radio {
+    display: none;
+  }
+
+  &__input-radio:checked + &__radio-label &__radio-btn::after {
+    opacity: 1;
+  }
+}

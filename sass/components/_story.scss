@@ -20,6 +20,7 @@
     // Defines a shape around which inline content wraps, this block must have float element
     shape-outside: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
+    overflow: hidden;
   }
 
   &__img {
