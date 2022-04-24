@@ -1,0 +1,82 @@
+.navigation {
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    height: 7rem;
+    width: 7rem;
+    background-color: $color-white;
+    position: fixed;
+    top: 5rem;
+    right: 5rem;
+    z-index: 2000;
+  }
+
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    // Linear là từ 1 hướng đổ về 1 hướng
+    // Radial là tâm đổ ra mọi hướng
+    background-image: radial-gradient($color-primary, $color-primary-dark);
+    border-radius: 50%;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    transform: scale(80);
+    z-index: 1000;
+  }
+
+  &__nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1100;
+  }
+
+  &__list {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 1200;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  &__link:visited,
+  &__link:link {
+    display: inline-block;
+    font-size: 3rem;
+    text-decoration: none;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $color-white;
+    padding: 1rem 2rem;
+    background-image: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 50%,
+      $color-white 50%
+    );
+    background-size: 220%;
+    transition: all 0.4s;
+    span {
+      margin-right: 1.4rem;
+    }
+  }
+
+  &__link:hover,
+  &__link:active {
+    background-position: 100%;
+    color: $color-primary-dark;
+    transform: translateX(10px);
+  }
+}
