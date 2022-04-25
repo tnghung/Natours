@@ -1,3 +1,6 @@
+.body-hidden {
+  overflow: hidden;
+}
 .container {
   height: 100vh;
   width: 100%;
@@ -13,6 +16,11 @@
     &__img {
       margin-left: 8rem;
       height: 35rem;
+      animation-name: fadeIn;
+      animation-duration: 1.2s;
+      animation-timing-function: ease-in;
+      animation-delay: 1s;
+      animation-fill-mode: backwards;
     }
   }
 }
