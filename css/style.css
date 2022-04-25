@@ -457,7 +457,7 @@ body {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
 
-.btn-text:link, .btn-text:visited {
+.btn-text, .btn-text:link, .btn-text:visited {
   display: inline-block;
   font-size: 1.6rem;
   font-weight: 700;
@@ -468,6 +468,7 @@ body {
   transition: all 0.2s; }
 
 .btn-text:hover {
+  cursor: pointer;
   background-color: #55c57a;
   color: #fff;
   transform: translateY(-3px);
@@ -544,7 +545,7 @@ body {
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
     font-size: 1.6rem;
     background-color: rgba(255, 255, 255, 0.8);
-    transition: all 1.2s ease;
+    transition: all 1s ease;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
     .card__side--back {
@@ -765,3 +766,63 @@ body {
 
 .form__input-radio:checked + .form__radio-label .form__radio-btn::after {
   opacity: 1; }
+
+.popup {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s; }
+  .popup__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 10000;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s;
+    display: table; }
+  .popup__left {
+    display: table-cell;
+    width: 33.33333%; }
+  .popup__right {
+    display: table-cell;
+    width: 66.66667%;
+    vertical-align: middle;
+    padding: 2.5rem; }
+  .popup__img {
+    display: block;
+    width: 100%; }
+  .popup__text {
+    font-size: 1.4rem;
+    -moz-column-count: 2;
+    column-count: 2;
+    column-gap: 3rem;
+    -moz-column-gap: 3rem;
+    column-rule: 1px solid #eee;
+    -moz-column-rule: 1px solid #eee;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto; }
+  .popup__close {
+    display: inline-block;
+    position: absolute;
+    top: 0rem;
+    right: 1.8rem;
+    font-size: 5rem;
+    text-decoration: none;
+    line-height: 1;
+    color: #333; }
+    .popup__close:hover {
+      cursor: pointer;
+      color: #55c57a; }

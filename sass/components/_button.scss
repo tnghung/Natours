@@ -84,6 +84,7 @@
 }
 
 .btn-text {
+  &,
   &:link,
   &:visited {
     display: inline-block;
@@ -97,6 +98,7 @@
   }
 
   &:hover {
+    cursor: pointer;
     background-color: $color-primary;
     color: $color-white;
 

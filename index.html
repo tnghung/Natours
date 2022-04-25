@@ -91,7 +91,9 @@
               totam perspiciatis in, error beatae cupiditate eum similique amet
               eaque sit.
             </p>
-            <a href="#" class="btn-text">Learn more &#8594;</a>
+            <span class="btn-text" onclick="openPopUp()"
+              >Learn more &#8594;</span
+            >
           </div>
 
           <div class="col-1-of-2">
@@ -449,7 +451,12 @@
         <div class="col-1-of-2">
           <p class="footer__copyright">
             Built by
-            <a href="#" class="footer__link">Trinh Nguyen Hung</a><br />
+            <a
+              href="https://github.com/tnghung/Natours"
+              target="_blank"
+              class="footer__link"
+              >Trinh Nguyen Hung</a
+            ><br />
             Inspiration design from
             <a
               href="https://dribbble.com/shots/15525342-EasyCamper-Web"
@@ -461,9 +468,50 @@
         </div>
       </div>
     </footer>
+    <div class="popup" id="popup" onclick="closePopUp()">
+      <div class="popup__content" id="popup__content">
+        <div class="popup__left">
+          <img src="img/popup_1.jpg" alt="Tour photos" class="popup__img" />
+          <img src="img/popup_2.jpg" alt="Tour photos" class="popup__img" />
+        </div>
+        <div class="popup__right">
+          <span class="popup__close" onclick="closePopUp()"> &times;</span>
+          <h2 class="heading-secondary u-mb-s">A New Sky &ndash; A New Life</h2>
+          <h3 class="heading-tertiary u-mb-s">We’ve got it all for you!</h3>
+          <div class="popup__text u-mb-m">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et hic
+            omnis, optio ipsa aspernatur voluptatum adipisci porro ullam!
+            Placeat quia esse molestiae nobis asperiores omnis blanditiis
+            distinctio eius fuga officia. Lorem, ipsum dolor sit amet
+            consectetur adipisicing elit. Perspiciatis molestiae vel explicabo
+            tempore, alias dolore fuga commodi neque nobis. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit.
+          </div>
+          <div class="u-center-text">
+            <a href="#tours" class="btn btn--green" onclick="closePopUp()"
+              >Join with us!</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
     <script>
       function closeNav() {
         document.getElementById("navi-toggle").checked = false;
+      }
+      function closePopUp() {
+        var popUp = document.getElementById("popup");
+        popUp.style.opacity = "0";
+        popUp.style.visibility = "hidden";
+      }
+
+      function openPopUp() {
+        var popUp = document.getElementById("popup");
+        popUp.style.opacity = "1";
+        popUp.style.visibility = "visible";
+
+        var popUpContent = document.getElementById("popup__content");
+        popUpContent.style.opacity = "1";
       }
     </script>
   </body>
