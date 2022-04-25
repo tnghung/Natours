@@ -14,7 +14,6 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  padding: 3rem;
   text-rendering: optimizeSpeed;
   image-rendering: optimizeSpeed;
   box-sizing: border-box; }
@@ -107,6 +106,9 @@ body {
     /* Làm tránh những animation lỗi tự phát sinh ko mong muốn hiển thị đến người dùng */
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
+    .heading-primary--main-grey {
+      font-size: 4rem;
+      letter-spacing: 1.8rem; }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -114,6 +116,8 @@ body {
     letter-spacing: 1.4rem;
     animation: moveInRight 1s ease-in;
     -webkit-animation: moveInRight 1s ease-in; }
+    .heading-primary--sub-grey {
+      letter-spacing: 0.1rem; }
 
 .heading-secondary {
   display: inline-block;
@@ -161,6 +165,9 @@ body {
 .u-bold-text {
   font-weight: 900 !important; }
 
+.u-padding-3 {
+  padding: 3rem; }
+
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
@@ -194,6 +201,18 @@ body {
     .section-book .book__form {
       padding: 6rem;
       width: 50%; }
+
+.container {
+  height: 100vh;
+  width: 100%;
+  padding: 0 20rem; }
+  .container .content {
+    text-align: center; }
+    .container .content__icon {
+      color: red; }
+    .container .content__img {
+      margin-left: 8rem;
+      height: 35rem; }
 
 .row {
   max-width: 114rem;

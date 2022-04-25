@@ -32,6 +32,10 @@ body {
     /* Làm tránh những animation lỗi tự phát sinh ko mong muốn hiển thị đến người dùng */
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    &-grey {
+      font-size: 4rem;
+      letter-spacing: 1.8rem;
+    }
   }
 
   &--sub {
@@ -41,6 +45,10 @@ body {
     letter-spacing: 1.4rem;
     animation: moveInRight 1s ease-in;
     -webkit-animation: moveInRight 1s ease-in;
+
+    &-grey {
+      letter-spacing: 0.1rem;
+    }
   }
 }
 
