@@ -14,6 +14,7 @@ html {
   /* Mặc định các trình duyệt là 16px nên 62.5% = 10px */
   // Không nên nằm trong typography, vì nó định nghĩa 1rem tương ứng với bao nhiêu px
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {

@@ -6,7 +6,6 @@
     position: relative;
     display: inline-block;
     text-transform: uppercase;
-    padding: 1.5rem 4rem;
     text-decoration: none;
     font-size: $default-font-size;
     border-radius: 10rem;
@@ -31,6 +30,8 @@
   &--white {
     background-color: $color-white;
     color: $color-grey-dark;
+    padding: 1.6rem 2.8rem;
+    font-weight: 500;
 
     &::after {
       background-color: $color-white;
@@ -42,6 +43,7 @@
     }
   }
   &--green {
+    padding: 1.5rem 4rem;
     background-color: $color-primary;
     color: $color-white;
 

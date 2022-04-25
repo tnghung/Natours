@@ -10,7 +10,8 @@
     mà rem thì thay đổi theo font-size của thẻ root (ở đây chính là thẻ html) */
 html {
   /* Mặc định các trình duyệt là 16px nên 62.5% = 10px */
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
 
 body {
   padding: 3rem;
@@ -220,62 +221,111 @@ body {
   display: none; }
 
 .navigation__button {
+  position: fixed;
+  top: 5.5rem;
+  right: 5.5rem;
   height: 7rem;
   width: 7rem;
+  text-align: center;
   background-color: #fff;
-  position: fixed;
-  top: 5rem;
-  right: 5rem;
+  border-radius: 50%;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
   z-index: 2000; }
 
 .navigation__background {
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
   height: 6rem;
   width: 6rem;
   background-image: radial-gradient(#55c57a, #28b485);
   border-radius: 50%;
-  position: fixed;
-  top: 6rem;
-  right: 6rem;
-  transform: scale(80);
-  z-index: 1000; }
+  z-index: 1500;
+  transition: all 0.8s cubic-bezier(0.65, 0, 0.35, 1); }
 
 .navigation__nav {
   height: 100vh;
+  width: 0;
   position: fixed;
   top: 0;
-  right: 0;
-  z-index: 1100; }
+  left: -10%;
+  opacity: 0;
+  z-index: 1600;
+  transition: all 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
 .navigation__list {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center;
-  z-index: 1200; }
+  list-style: none;
+  font-size: 3rem;
+  text-align: center; }
 
 .navigation__item:not(:last-child) {
-  margin-bottom: 1.2rem; }
+  margin-bottom: 2.5rem; }
 
-.navigation__link:visited, .navigation__link:link {
+.navigation__link {
   display: inline-block;
-  font-size: 3rem;
+  padding: 0.8rem 1.2rem;
   text-decoration: none;
-  font-weight: 300;
-  text-transform: uppercase;
   color: #fff;
-  padding: 1rem 2rem;
-  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+  text-transform: uppercase;
+  font-weight: 300;
+  background-image: linear-gradient(105deg, transparent 0%, transparent 50%, #fff 50%);
   background-size: 220%;
   transition: all 0.4s; }
-  .navigation__link:visited span, .navigation__link:link span {
-    margin-right: 1.4rem; }
+  .navigation__link span {
+    margin-right: 1.2rem; }
 
-.navigation__link:hover, .navigation__link:active {
+.navigation__link:hover {
   background-position: 100%;
   color: #28b485;
-  transform: translateX(10px); }
+  transform: translateX(1rem); }
+
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(80); }
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  left: 0;
+  width: 100%; }
+
+.navigation__icon {
+  position: relative;
+  top: 3.5rem; }
+  .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+    display: inline-block;
+    height: 2px;
+    width: 3rem;
+    background-color: #333;
+    transition: all 0.2s; }
+  .navigation__icon::before, .navigation__icon::after {
+    content: "";
+    position: absolute;
+    left: 0; }
+  .navigation__icon::before {
+    top: -0.8rem; }
+  .navigation__icon::after {
+    top: 0.8rem; }
+
+.navigation__button:hover .navigation__icon::before {
+  top: -1rem; }
+
+.navigation__button:hover .navigation__icon::after {
+  top: 1rem; }
+
+.navigation__checkbox:checked ~ .navigation__button .navigation__icon {
+  background-color: transparent; }
+
+.navigation__checkbox:checked ~ .navigation__button .navigation__icon::before {
+  transform: rotate(135deg);
+  top: 0; }
+
+.navigation__checkbox:checked ~ .navigation__button .navigation__icon::after {
+  transform: rotate(-135deg);
+  top: 0; }
 
 .header {
   height: 95vh;
@@ -319,7 +369,7 @@ body {
     border-top: 1px solid #777;
     padding-top: 1.5rem; }
   .footer__navigation {
-    width: 86%; }
+    width: 87%; }
   .footer__copyright {
     float: right;
     width: 80%;
@@ -353,7 +403,6 @@ body {
     position: relative;
     display: inline-block;
     text-transform: uppercase;
-    padding: 1.5rem 4rem;
     text-decoration: none;
     font-size: 1.6rem;
     border-radius: 10rem;
@@ -373,13 +422,16 @@ body {
     transition: all 0.4s; }
   .btn--white {
     background-color: #fff;
-    color: #777; }
+    color: #777;
+    padding: 1.6rem 2.8rem;
+    font-weight: 500; }
     .btn--white::after {
       background-color: #fff; }
     .btn--white:focus {
       outline: none;
       box-shadow: 0 1.2rem 2rem rgba(0, 0, 0, 0.15); }
   .btn--green {
+    padding: 1.5rem 4rem;
     background-color: #55c57a;
     color: #fff; }
     .btn--green::after {
