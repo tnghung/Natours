@@ -248,6 +248,9 @@ ORDER: base + typography > general layout > page layout > components
   @media (max-width: 56.25em) {
     .section-about {
       padding: 15rem 0 22rem; } }
+  @media (max-width: 37.5em) {
+    .section-about {
+      padding: 20rem 0 22rem; } }
 
 .section-features {
   margin-top: -8rem;

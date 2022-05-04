@@ -33,7 +33,6 @@ ORDER: base + typography > general layout > page layout > components
       @content;
     }
   }
-
   @if ($breakPoint == tab-port) {
     // 900px
     @media (max-width: 56.25em) {
