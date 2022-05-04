@@ -14,7 +14,11 @@
     margin-bottom: 8rem;
 
     @include respond(tab-port) {
-      margin-bottom: 6rem;
+      margin-bottom: 4rem;
+    }
+
+    @include respond(phone) {
+      margin-bottom: -2rem;
     }
   }
 
@@ -71,6 +75,9 @@
 
   &__logo {
     height: 100%;
+    @include respond(phone) {
+      height: 45%;
+    }
     object-fit: cover;
   }
 }

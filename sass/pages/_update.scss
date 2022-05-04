@@ -4,7 +4,12 @@
 .container {
   height: 100vh;
   width: 100%;
-  padding: 0 20rem;
+
+  @include respond(tab-port) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   .content {
     text-align: center;
@@ -21,6 +26,10 @@
       animation-timing-function: ease-in;
       animation-delay: 1s;
       animation-fill-mode: backwards;
+
+      @include respond(tab-port) {
+        margin-left: 0;
+      }
     }
   }
 }

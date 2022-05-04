@@ -304,8 +304,12 @@ ORDER: base + typography > general layout > page layout > components
 
 .container {
   height: 100vh;
-  width: 100%;
-  padding: 0 20rem; }
+  width: 100%; }
+  @media (max-width: 56.25em) {
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center; } }
   .container .content {
     text-align: center; }
     .container .content__icon {
@@ -318,6 +322,9 @@ ORDER: base + typography > general layout > page layout > components
       animation-timing-function: ease-in;
       animation-delay: 1s;
       animation-fill-mode: backwards; }
+      @media (max-width: 56.25em) {
+        .container .content__img {
+          margin-left: 0; } }
 
 .row {
   max-width: 114rem;
@@ -519,7 +526,10 @@ ORDER: base + typography > general layout > page layout > components
     margin-bottom: 8rem; }
     @media (max-width: 56.25em) {
       .footer__logo-box {
-        margin-bottom: 6rem; } }
+        margin-bottom: 4rem; } }
+    @media (max-width: 37.5em) {
+      .footer__logo-box {
+        margin-bottom: -2rem; } }
   .footer__navigation, .footer__copyright {
     border-top: 1px solid #777;
     padding-top: 1.5rem; }
@@ -557,6 +567,9 @@ ORDER: base + typography > general layout > page layout > components
   .footer__logo {
     height: 100%;
     object-fit: cover; }
+    @media (max-width: 37.5em) {
+      .footer__logo {
+        height: 45%; } }
 
 .btn {
   /* Làm hiệu ứng lên xuống khi hover và active trên btn */
