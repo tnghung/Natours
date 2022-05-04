@@ -2,6 +2,10 @@
   background-color: $color-grey-light-1;
   padding: 25rem 0;
   margin-top: -20vh;
+
+  @include respond(tab-port) {
+    padding: 15rem 0 22rem;
+  }
 }
 
 .section-features {
@@ -20,17 +24,27 @@
   & > * {
     transform: skewY(7deg);
   }
+  @include respond(tab-port) {
+    padding: 12rem 0;
+  }
 }
 
 .section-tours {
   margin-top: -8rem;
   padding: 25rem 0 1rem;
   background-color: $color-grey-light-1;
+  @include respond(tab-port) {
+    padding: 18rem 0 1rem;
+  }
 }
 
 .section-stories {
   position: relative;
-  padding: 10rem;
+  padding: 10rem 0;
+
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
 }
 
 .section-book {
@@ -40,6 +54,9 @@
     $color-primary-light,
     $color-primary-dark
   );
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
 
   .book {
     // Solid color-gradient -> dùng 2 màu chạy trên một gradient
@@ -56,6 +73,22 @@
     &__form {
       padding: 6rem;
       width: 50%;
+    }
+
+    @include respond(phone) {
+      background-image: linear-gradient(
+          rgba($color-white, 0.8) 100%,
+          transparent 50%
+        ),
+        url(../img/nat-10.jpg);
+      background-size: cover;
+      box-shadow: 0 1.2rem 3rem rgba($color: $color-black, $alpha: 0.4);
+
+      &__form {
+        text-align: center;
+        padding: 6rem;
+        width: 100%;
+      }
     }
   }
 }

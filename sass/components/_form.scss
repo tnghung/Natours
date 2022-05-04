@@ -4,11 +4,20 @@
     &:not(:last-child) {
       margin-bottom: 3.5rem;
     }
+    @include respond(phone) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__input {
     display: block;
     width: 90%;
+
+    @include respond(phone) {
+      width: 80%;
+    }
+
     padding: 1.2rem 1.6rem;
     font-family: inherit;
     font-size: 1.8rem;
@@ -58,6 +67,16 @@
   &__radio-group {
     display: inline-block;
     width: 49%;
+
+    @include respond(tab-port) {
+      width: 46%;
+    }
+
+    @include respond(phone) {
+      &:first-child {
+        text-align: center;
+      }
+    }
   }
 
   &__radio-label {
@@ -66,6 +85,14 @@
     font-weight: 500;
     padding-left: 4rem;
     cursor: pointer;
+
+    @include respond(tab-port) {
+      font-size: 1.4rem;
+    }
+
+    @include respond(phone) {
+      font-size: 1.8rem;
+    }
   }
 
   &__radio-btn {
@@ -80,7 +107,7 @@
 
     &::after {
       display: block;
-      content: "";
+      content: '';
       position: absolute;
       top: 50%;
       left: 50%;
@@ -101,5 +128,4 @@
   &__input-radio:checked + &__radio-label &__radio-btn::after {
     opacity: 1;
   }
-
 }

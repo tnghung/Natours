@@ -1,5 +1,5 @@
 body {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   /* Nghĩa là line height gấp 1.7 lần line height mặc định */
   line-height: 1.7;
@@ -10,11 +10,19 @@ body {
   margin-bottom: 3rem;
   color: $color-white;
   text-transform: uppercase;
+
   &--main {
     display: block;
     font-size: 6rem;
     font-weight: 400;
     letter-spacing: 3.5rem;
+    text-align: center;
+
+    @include respond(tab-port) {
+      font-size: 5rem;
+      letter-spacing: 1.5rem;
+    }
+
     animation-name: moveInLeft;
     animation-duration: 1s;
     /* ease-in: vào chậm ra nhanh, ease-out thì ngược lại */
@@ -43,6 +51,17 @@ body {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.4rem;
+
+    @include respond(tab-port) {
+      font-size: 1.8rem;
+      letter-spacing: 1rem;
+    }
+
+    @include respond(tab-port) {
+      font-size: 1.4rem;
+      letter-spacing: 1rem;
+    }
+
     animation: moveInRight 1s ease-in;
     -webkit-animation: moveInRight 1s ease-in;
 
@@ -57,6 +76,10 @@ body {
   font-size: 3.5rem;
   font-weight: 700;
   text-transform: uppercase;
+
+  @include respond(tab-port) {
+    font-size: 2.5rem;
+  }
   // Tạo ra một lớp background gradient
   background-image: linear-gradient(
     to right,

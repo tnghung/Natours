@@ -7,6 +7,11 @@
     position: fixed;
     top: 5.5rem;
     right: 5.5rem;
+    @include respond(tab-port) {
+      top: 1.5rem;
+      right: 2.5rem;
+    }
+
     height: 7rem;
     width: 7rem;
     text-align: center;
@@ -21,6 +26,10 @@
     position: fixed;
     top: 6rem;
     right: 6rem;
+    @include respond(tab-port) {
+      top: 2rem;
+      right: 3rem;
+    }
     height: 6rem;
     width: 6rem;
     background-image: radial-gradient($color-primary, $color-primary-dark);
@@ -109,7 +118,7 @@
 
     &::before,
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
     }
@@ -142,5 +151,4 @@
     transform: rotate(-135deg);
     top: 0;
   }
-
 }

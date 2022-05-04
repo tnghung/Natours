@@ -16,6 +16,10 @@
 
 .u-mb-l {
   margin-bottom: 8rem !important;
+
+  @include respond(tab-port) {
+    margin-bottom: 4rem !important;
+  }
 }
 
 .u-mt-l {
@@ -30,3 +34,12 @@
   padding: 3rem;
 }
 
+.u-w-s {
+  @include respond(tab-port) {
+    max-width: 90rem !important;
+  }
+
+  @include respond(phone) {
+    max-width: 100rem !important;
+  }
+}

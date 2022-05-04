@@ -8,13 +8,30 @@
 
   @include clearfix;
 
+  @include respond(tab-port) {
+    max-width: 50rem;
+  }
+
+  @include respond(phone) {
+    padding: 0 3rem;
+  }
+
   //   [class^="col-"];  Chọn tất cả các class bắt đầu với "col-"
   //   [class*="col-"];  Chọn tất cả các class chứa "col-"
   //   [class$="col-"];  Chọn tất cả các class có đuôi với "col-"
-  [class^="col-"] {
+  [class^='col-'] {
     float: left;
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 100% !important;
     }
   }
 

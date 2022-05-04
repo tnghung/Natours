@@ -1,7 +1,7 @@
 .story {
   width: 80%;
   margin: 0 auto;
-  padding: 4rem;
+  padding: 4rem 4rem 8rem;
   background-color: rgba($color-white, 0.6);
   font-size: $default-font-size;
   box-shadow: 1.2rem 2rem 6rem rgba($color: $color-black, $alpha: 0.1);
@@ -9,6 +9,16 @@
 
   & > * {
     transform: skewX(12deg);
+  }
+
+  @include respond(tab-port) {
+    width: auto;
+    padding: 4rem 3rem 8rem;
+  }
+
+  @include respond(phone) {
+    width: 90%;
+    padding: 3.5rem 3.5rem 5rem;
   }
 
   &__avatar {
