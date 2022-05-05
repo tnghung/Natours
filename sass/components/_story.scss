@@ -24,8 +24,13 @@
   &__avatar {
     position: relative;
     float: left;
-    height: 15rem;
-    width: 15rem;
+    width: 12.5rem;
+    aspect-ratio: 1/1;
+
+    @include respond(phone) {
+      width: 10rem;
+      aspect-ratio: 1/1;
+    }
     margin-right: 3rem;
     // Defines a shape around which inline content wraps, this block must have float element
     shape-outside: circle(50% at 50% 50%);

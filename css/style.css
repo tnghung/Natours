@@ -32,7 +32,7 @@ html {
       font-size: 50%; } }
   @media (max-width: 37.5em) {
     html {
-      font-size: 37.5%; } }
+      font-size: 43.75%; } }
 
 body {
   text-rendering: optimizeSpeed;
@@ -192,6 +192,9 @@ body {
   font-weight: 900;
   text-transform: uppercase;
   word-spacing: 0.2rem; }
+  @media (max-width: 37.5em) {
+    .heading-tertiary {
+      font-size: 1.6rem; } }
 
 .paragraph {
   font-size: 1.6rem;
@@ -205,6 +208,9 @@ body {
 
 .u-mb-s {
   margin-bottom: 2rem !important; }
+  @media (max-width: 37.5em) {
+    .u-mb-s {
+      margin-bottom: 1.5rem !important; } }
 
 .u-mb-m {
   margin-bottom: 3rem !important; }
@@ -245,6 +251,9 @@ ORDER: base + typography > general layout > page layout > components
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh; }
+  @media (max-width: 56.25em) {
+    .section-about {
+      margin-top: -18vh; } }
   @media (max-width: 56.25em) {
     .section-about {
       padding: 15rem 0 22rem; } }
@@ -492,19 +501,26 @@ ORDER: base + typography > general layout > page layout > components
             nhưng phần bottom và center sẽ bị crop theo */
   background-position: top;
   /* Cắt hình theo tọa độ x y, lấy tọa độ (0,0) nằm ở góc trái màn hình */
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); }
   @media (max-width: 56.25em) {
     .header {
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%); } }
   .header__logo-box {
     position: absolute;
     top: 3rem;
     left: 3rem; }
+    @media (max-width: 56.25em) {
+      .header__logo-box {
+        top: 2rem;
+        left: 2rem; } }
   .header__logo {
     height: 3.5rem;
     transition: all 0.4s; }
+    @media (max-width: 56.25em) {
+      .header__logo {
+        height: 5.5rem; } }
   .header__logo:hover {
     cursor: pointer;
     transform: translateY(-0.8rem) rotateY(20deg); }
@@ -589,7 +605,7 @@ ORDER: base + typography > general layout > page layout > components
     cursor: pointer; }
   .btn::after {
     display: inline-block;
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -644,6 +660,9 @@ ORDER: base + typography > general layout > page layout > components
   border-bottom: 1.5px solid #55c57a;
   color: #55c57a;
   transition: all 0.2s; }
+  @media (max-width: 56.25em) {
+    .btn-text, .btn-text:link, .btn-text:visited {
+      font-size: 1.8rem; } }
 
 .btn-text:hover {
   cursor: pointer;
@@ -723,6 +742,10 @@ ORDER: base + typography > general layout > page layout > components
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   transition: all 0.3s; }
+  @media (max-width: 56.25em) {
+    .feature-box {
+      font-size: 1.75rem;
+      /*  */ } }
   .feature-box__icon {
     display: inline-block;
     font-size: 6rem;
@@ -811,8 +834,11 @@ ORDER: base + typography > general layout > page layout > components
       margin: 0 auto;
       text-align: center; }
       .card__detail ul li {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         padding: 1rem; }
+        @media (max-width: 56.25em) {
+          .card__detail ul li {
+            font-size: 2rem; } }
         .card__detail ul li:not(:last-child) {
           border-bottom: 1px solid #eee; }
   .card__cta {
@@ -881,12 +907,16 @@ ORDER: base + typography > general layout > page layout > components
   .story__avatar {
     position: relative;
     float: left;
-    height: 15rem;
-    width: 15rem;
+    width: 12.5rem;
+    aspect-ratio: 1/1;
     margin-right: 3rem;
     shape-outside: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     overflow: hidden; }
+    @media (max-width: 37.5em) {
+      .story__avatar {
+        width: 10rem;
+        aspect-ratio: 1/1; } }
   .story__img {
     height: 100%;
     transition: all 0.5s;
@@ -969,6 +999,9 @@ ORDER: base + typography > general layout > page layout > components
   left: 1.6rem;
   font-size: 1.4rem;
   font-weight: 700; }
+  @media (max-width: 56.25em) {
+    .form__label {
+      left: 5.2rem; } }
 
 .form__input:placeholder-shown + .form__label {
   opacity: 0;
@@ -996,7 +1029,7 @@ ORDER: base + typography > general layout > page layout > components
       font-size: 1.4rem; } }
   @media (max-width: 37.5em) {
     .form__radio-label {
-      font-size: 1.8rem; } }
+      font-size: 1.45 rem; } }
 
 .form__radio-btn {
   display: inline-block;

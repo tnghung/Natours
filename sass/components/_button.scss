@@ -16,7 +16,7 @@
 
   &::after {
     display: inline-block;
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -89,6 +89,9 @@
   &:visited {
     display: inline-block;
     font-size: $default-font-size;
+    @include respond(tab-port) {
+      font-size: 1.8rem;
+    }
     font-weight: 700;
     text-decoration: none;
     padding: 0.4rem 0.4rem;

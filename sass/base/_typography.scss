@@ -102,6 +102,9 @@ body {
 
 .heading-tertiary {
   font-size: $default-font-size;
+  @include respond(phone) {
+    font-size: 1.6rem;
+  }
   font-weight: 900;
   text-transform: uppercase;
   word-spacing: 0.2rem;

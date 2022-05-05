@@ -8,6 +8,10 @@
 
 .u-mb-s {
   margin-bottom: 2rem !important;
+
+  @include respond(phone) {
+    margin-bottom: 1.5rem !important;
+  }
 }
 
 .u-mb-m {
